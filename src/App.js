@@ -3,10 +3,31 @@ import { useState } from "react";
 import "./styles.css";
 export function App() {
   const [count, setCount] = useState("");
+  const [c, setC] = useState(0);
   const f = (data) => {
     // console.log(data);
     return <div>{data.msg}</div>;
   };
+  const expensiveCal = (num) => {
+    console.log("calculatin");
+    for (let i = 0; i < 10000; i++) {
+      num += 1;
+    }
+    return num;
+  };
+  const expensiveCalss = (num) => {
+    console.log("calculatin");
+    for (let i = 0; i < 10000; i++) {
+      num += 1;
+    }
+    return num;
+  };
+  // const calculation = expensiveCal(c);
+  const calculation = expensiveCalss(c);
+  function increment() {
+    console.log("incrementing the count");
+    setCount((prev) => prev + 1);
+  }
   const handleDatafromChild = (data) => {
     console.log(`${data} datadatadatadata`);
   };
@@ -18,6 +39,8 @@ export function App() {
     <div className="App">
       <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2>
+      <h1>Calculation :{expensiveCal(0)}</h1>
+      <h2>Calculation :{calculation}</h2>
       <App1
         render={f}
         render1={() => ["one,two"]}
